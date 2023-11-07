@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            padding: 10px;
+        }
+        .grid-item {
+            padding: 20px;
+            text-align: center;
+            top: 20%;
+            left: 20%;
+        }
+        .info-box {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+        .confirm-button {
+            display: none;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="infoBox" class="info-box"></div>
+    <div class="grid-container">
+        <img class="grid-item" src="狗2.png" style="position: absolute;left:600px;top:50px" onclick="showInfo('战狼', '100', '50')">
+        <img class="grid-item" src="狗1.png" style="position: absolute;left:800px;top:50px" onclick="showInfo('巨犬', '90', '60')">
+        <img class="grid-item" src="鼠1.png" style="position: absolute;left:1000px;top:50px" onclick="showInfo('超级鼠', '90', '60')">
+        <img class="grid-item" src="鼠2.png" style="position: absolute;left:1200px;top:50px" onclick="showInfo('暗夜鼠', '100', '50')">
+        <img class="grid-item" src="猫1.png" style="position: absolute;left:1000px;top:150px" onclick="showInfo('精灵猫', '110', '40')">
+        <img class="grid-item" src="猫2.png" style="position: absolute;left:1200px;top: 150px;"  onclick="showInfo('灵猫', '110', '40')">
+    </div>
+    <button id="confirmButton" class="confirm-button" onclick="confirmSelection()">确认</button>
+
+    <script>
+        function showInfo(name, speed, endurance) {
+            document.getElementById('infoBox').innerHTML = '名字: ' + name + '<br>' +
+                '速度: ' + speed + '<br>' +
+                '耐力: ' + endurance;
+            document.getElementById('infoBox').style.display = 'block';
+            document.getElementById('confirmButton').style.display = 'block';
+        }
+        function confirmSelection() {
+            window.location.href = '选择游戏模式基础代码界面.html';
+        }
+    </script>
+</body>
+</html>
