@@ -1,0 +1,198 @@
+.container{
+    width: 100%;
+}
+
+.container .bg{
+    width: 100%;
+    height: 700px;
+}
+
+.container .title{
+    position: absolute;
+    left: 30%;
+    width: 600px;
+    height: 113px;
+}
+
+.container .enroll{
+    background-image: url('./image/enroll.png');
+    background-size: cover;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    left: 42.5%;
+    top: 480px;
+    width: 200px;
+    height: 47px;
+}
+
+.container .login{
+    background-image: url('./image/login.png');
+    background-size: cover;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    left: 42.5%;
+    top: 560px;
+    width: 200px;
+    height: 47px;
+}
+
+.container .login-form {
+    display: none;
+    position: absolute;
+    top: 150px;
+    left: 39%;
+    width: 300px;
+    height: 249px;
+}
+
+.container .login-form .bg1{
+    width: 100%;
+    height: 100%;
+}
+
+.container .login-form .text{
+    position: absolute;
+    height: 30px;
+    top: 30px;
+    left: 30%;
+}
+
+.container .login-form .password{
+    position: absolute;
+    height: 30px;
+    top: 100px;
+    left: 30%;
+}
+
+.container .login-form .s1{
+    position: absolute;
+    top: 30px;
+    font-size: 150%;
+    font-weight: bold;
+    left: 10%;
+}
+
+.container .login-form .s2{
+    position: absolute;
+    top: 100px;
+    font-size: 150%;
+    font-weight: bold;
+    left: 10%;
+}
+
+.login-form .sureenroll{
+    background-image: url('./image/确认登陆.png');
+    background-size: cover;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 160px;
+    width: 100px;
+    height: 30px;
+    left: 32%;
+}
+
+.login-form .back{
+    background-image: url('./image/返回.png');
+    background-size: cover;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 205px;
+    width: 100px;
+    height: 30px;
+    left: 32%;
+}
+
+.container .enroll-form {
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 35%;
+    width: 300px;
+    height: 249px;
+}
+
+.container .enroll-form .e1{
+    position: absolute;
+    top: 30px;
+    font-size: 150%;
+    font-weight: bold;
+    left: 10%;
+}
+
+.container .enroll-form .e2{
+    position: absolute;
+    top: 100px;
+    font-size: 150%;
+    font-weight: bold;
+    left: 10%;
+}
+
+.container .enroll-form .e3{
+    position: absolute;
+    top: 170px;
+    font-size: 150%;
+    font-weight: bold;
+    left: 10%;
+}
+
+.container .enroll-form .etext{
+    position: absolute;
+    height: 30px;
+    width: 250px;
+    top: 30px;
+    left: 50%;
+}
+
+.container .enroll-form .epassword{
+    position: absolute;
+    height: 30px;
+    width: 250px;
+    top: 100px;
+    left: 50%;
+}
+
+.container .enroll-form .epasswordagain{
+    position: absolute;
+    height: 30px;
+    width: 250px;
+    top: 170px;
+    left: 50%;
+}
+
+.enroll-form .firstenroll{
+    background-image: url('./image/注册.png');
+    background-size: cover;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 250px;
+    width: 100px;
+    height: 60px;
+    left: 88%;
+}
+
+.enroll-form .eback{
+    background-image: url('./image/注册返回.png');
+    background-size: cover;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 250px;
+    width: 100px;
+    height: 60px;
+    left: 18%;
+}
+
+.container #enrollwin{
+    display: none; /* 初始设置为不可见 */
+    position: absolute;
+    top: 20%;
+    left: 45%;
+    font-size: 200%;
+    font-weight: bold;
+    color: rgb(238, 8, 8);
+}
