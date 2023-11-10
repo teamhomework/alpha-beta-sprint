@@ -2,25 +2,37 @@
 <html>
 <head>
     <style>
+        body {
+            background-image: url('1.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
         .grid-container {
             display: grid;
             grid-template-columns: auto auto auto auto;
             padding: 10px;
+            background-color: rgba(255, 255, 255, 0.5);
         }
         .grid-item {
-            padding: 20px;
+            padding: 250px;
             text-align: center;
             top: 20%;
             left: 20%;
+            position: relative;
+            width: 100px;
+            height:100px;
         }
         .info-box {
             display: none;
             position: absolute;
             left: 0;
-            top: 0;
+            top: 10%;
             width: 200px;
-            height: 200px;
-            border: 1px solid black;
+            height: 400px;
+            border: 1px solid rgb(209, 229, 27);
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            color:rgb(165, 196, 12);
         }
         .confirm-button {
             display: none;
@@ -29,26 +41,40 @@
             bottom: 0;
             width: 100px;
             height: 50px;
+            background-image: url('2.png');
+            border-radius: 40%;
+            background-size: 100px 50px; /* 设置为contain或者cover，或者指定具体的尺寸值，以适应按钮大小 */
         }
+        .role-selection {
+            position: absolute;
+            top: 40px;
+            right: 230px;
+            font-size: 40px;
+            color: rgb(133, 73, 73);
+            
+}
+
     </style>
 </head>
 <body>
     <div id="infoBox" class="info-box"></div>
     <div class="grid-container">
-        <img class="grid-item" src="狗2.png" style="position: absolute;left:600px;top:50px" onclick="showInfo('战狼', '100', '50')">
-        <img class="grid-item" src="狗1.png" style="position: absolute;left:800px;top:50px" onclick="showInfo('巨犬', '90', '60')">
-        <img class="grid-item" src="鼠1.png" style="position: absolute;left:1000px;top:50px" onclick="showInfo('超级鼠', '90', '60')">
-        <img class="grid-item" src="鼠2.png" style="position: absolute;left:1200px;top:50px" onclick="showInfo('暗夜鼠', '100', '50')">
-        <img class="grid-item" src="猫1.png" style="position: absolute;left:1000px;top:150px" onclick="showInfo('精灵猫', '110', '40')">
-        <img class="grid-item" src="猫2.png" style="position: absolute;left:1200px;top: 150px;"  onclick="showInfo('灵猫', '110', '40')">
+        <img class="grid-item" src="狗2.png" style="position: absolute;left:10px;top:100px" onclick="showInfo('战狼', '100', '50','战狼是一种速度快、力量强大的生物。它有着结实强健的身体和流线型的身躯,皮毛光滑坚硬,眼睛充满野性和机警。战狼的头部宽大而沉重,四肢强壮有力,爪子大而锋利,可以在雪地或沙地上迅速奔跑。它的速度和力量是其他动物无法比拟的,攻击力也很强大。')">
+        <img class="grid-item" src="狗1.png" style="position: absolute;left:210px;top:100px" onclick="showInfo('巨犬', '90', '60','巨犬的头部宽大而沉重,耳朵大而直立,眼睛则闪烁着智慧的光芒。它的鼻子湿润而凉爽,总是嗅来嗅去,对周围的环境保持警觉。巨犬的嘴巴宽大,牙齿锋利,展现出强大的攻击力和威慑力。巨犬的毛发长而浓密,呈现出金色的光泽,身体强壮而有力,奔跑起来速度快而有力,让人感到震撼。它的尾巴粗壮而有力,总是高高翘起,表达出它的自信和狂野。')">
+        <img class="grid-item" src="鼠1.png" style="position: absolute;left:410px;top:100px" onclick="showInfo('超级鼠', '90', '60','超级鼠是一个身形小巧但非常勇敢和强大的角色,通常被描绘为一只拥有超能力的老鼠。它有着灰色的毛发和圆圆的眼睛,身形小巧但非常灵活,速度快而敏捷。超级鼠拥有一系列的超能力,包括但不限于:超强的力量,能够轻松举起比自己体重重几倍的物体;敏捷的速度,能够在短时间内迅速穿梭于各种狭窄的地方;敏锐的感知能力,能够感知到周围的环境变化和危险;以及强大的意志力，能够抵抗各种攻击和困难。')">
+        <img class="grid-item" src="鼠2.png" style="position: absolute;left:610px;top:100px" onclick="showInfo('暗夜鼠', '100', '50','灵猫是一种敏捷而聪明的动物形象,通常被描绘为一只优雅而神秘的大型猫科动物。它有着修长的身躯和优雅的姿态,身上散发出一种神秘的气息。灵猫的头部修长而优雅,耳朵尖尖的,眼睛则闪烁着聪明的光芒。灵猫的毛发柔软而光滑,呈现出黄色的光泽,身体灵活而敏捷,奔跑起来速度快而无声,让人感到神秘而迷人。它的尾巴细长而有力,总是高高翘起,表达出它的自信和独立。')">
+        <img class="grid-item" src="猫1.png" style="position: absolute;left:810px;top:100px" onclick="showInfo('精灵猫', '110', '40','暗夜鼠是一个神秘而狡猾的角色,通常被描绘为一只生活在黑暗中的老鼠。它有着灰色的毛发和闪烁着幽光的眼睛,身形瘦小但非常灵活,擅长在黑暗中行动。暗夜鼠生活在阴暗的角落和洞穴中,拥有非常敏锐的感知能力和听力。它可以在黑暗中察觉到周围的变化和危险,并能够迅速作出反应。此外,暗夜鼠还拥有非常高超的智慧和狡猾的性格,总是能够巧妙地避开危险和陷阱。')">
+        <img class="grid-item" src="猫2.png" style="position: absolute;left:1010px;top:100px;"  onclick="showInfo('灵猫', '110', '40','精灵猫是一种神秘而优雅的动物形象,通常被描绘为一只拥有魔法能力的猫。它有着优雅的身姿和奇异的蓝色眼睛,散发着神秘的气息。精灵猫的毛发光滑而柔软,呈现出深蓝色的光泽,身体灵活而轻盈,行动起来如同舞蹈一般。它拥有非常灵敏的感知能力,能够感知到周围的环境变化和危险,并能够迅速作出反应。')">
     </div>
     <button id="confirmButton" class="confirm-button" onclick="confirmSelection()">确认</button>
+    <div class="role-selection">角      色      选     择</div>
 
     <script>
-        function showInfo(name, speed, endurance) {
+        function showInfo(name, speed, endurance,introduction) {
             document.getElementById('infoBox').innerHTML = '名字: ' + name + '<br>' +
                 '速度: ' + speed + '<br>' +
-                '耐力: ' + endurance;
+                '耐力: ' + endurance + '<br>' +
+                '简介: ' + introduction ;
             document.getElementById('infoBox').style.display = 'block';
             document.getElementById('confirmButton').style.display = 'block';
         }
