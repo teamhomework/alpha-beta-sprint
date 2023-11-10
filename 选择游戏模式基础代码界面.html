@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>跑酷游戏模式选择</title>
+        <link rel="stylesheet" href="style2.css">
+    </head>
+    <body class="box">
+        <img src="选择游戏角色.png" onclick="goToPage('选择游戏角色基础代码界面')" style="position: absolute;left:100px;top:615px;width: 210px;height: 68px;">
+        <img src="左箭头.png" style="position: absolute;left:0px;top:620px;width: 120px;height: 65px;">
+        <img src="右箭头.png" style="position: absolute;left:290px;top:620px;width: 120px;height: 65px;">
+        <div id="mainMenu">
+            <img src="单人模式.png" onclick="showSingleplayerMode()" style="position: absolute;left:653px;top:35px;width: 226px;height: 110px;">
+            <img src="多人模式.png" onclick="showMultiplayerMode()" style="position: absolute;left:650px;top:155px;width: 226px;height: 110px;">
+            <img src="团队模式.png" onclick="goToTeamMode()" style="position: absolute;left:650px;top:275px;width: 226px;height: 110px;">
+            <!-- <button onclick="showSingleplayerMode()">单人模式</button><br> -->
+            <!-- <button onclick="showMultiplayerMode()">多人模式</button><br> -->
+            <!-- <button onclick="goToTeamMode()">团队模式</button><br> -->
+        </div>
+
+        <div id="singleplayerMenu" style="position:relative;left:1050px;display:none;width: 300px;height: 455px;">
+            <h2 style="position: absolute;left: -150px;">单人模式选择:</h2>
+            <img src="单人模式窗口.png" style="position: absolute;left:0px;top:20px;width: 100%;height: 100%;">
+            <img src="速度模式.png" onclick="goToPage('神秘森林1')" style="position: absolute;left:59px;top:100px;width: 183px;height: 68px;">
+            <img src="生存模式.png" onclick="goToPage('恐龙谷1')" style="position: absolute;left:59px;top:230px;width: 183px;height: 68px;">
+            <img src="得分模式.png" onclick="goToPage('天空之城1')" style="position: absolute;left:59px;top:350px;width: 183px;height: 68px;">
+            <!-- <button onclick="goToPage('神秘森林1')">速度模式</button><br>
+            <button onclick="goToPage('天空之城1')">得分模式</button><br>
+            <button onclick="goToPage('恐龙谷1')">生存模式</button><br> -->
+            <button style="position:absolute;left:108px;top:450px;width: 85px;height: 35px;background-image: linear-gradient(to right, rgb(255, 111, 0),#2fff44, #46a7d4);" onclick="goBack()">返回</button><br>
+        </div>
+
+        <div id="multiplayerMenu" style="position:relative;display:none;width: 460px;height: 400px;">
+            <!-- <h2>请选择多人模式:</h2> -->
+            <img src="多人模式窗口.png" style="position: absolute;left:0px;top:20px;width: 100%;height: 100%;">
+            <button style="position:absolute;left:218px;top:180px;width: 85px;height: 35px;background-image: linear-gradient(to right, #00d5ff, #d44646);" onclick="goToPage('神秘森林2')">竞速模式</button><br>
+            <button style="position:absolute;left:218px;top:288px;width: 85px;height: 35px;background-image: linear-gradient(to right, #00d5ff, #d44646);" onclick="goToPage('天空之城2')">得分模式</button><br>
+            <button style="position:absolute;left:218px;top:235px;width: 85px;height: 35px;background-image: linear-gradient(to right, #00d5ff, #d44646);" onclick="goToPage('恐龙谷2')">生存模式</button><br>
+            <button style="position:absolute;left:218px;top:340px;width: 85px;height: 35px;background-image: linear-gradient(to right, rgb(0, 255, 157),#ce2fff, #b8d446);" onclick="goBack()">返回</button><br>
+        </div>
+        <script>
+            function showSingleplayerMode() {
+    document.getElementById("mainMenu").style.display = "none";
+    document.getElementById("singleplayerMenu").style.display = "block";
+}
+
+function showMultiplayerMode() {
+    document.getElementById("mainMenu").style.display = "none";
+    document.getElementById("multiplayerMenu").style.display = "block";
+}
+
+function goToTeamMode() {
+    window.location.href = "团队对抗.html"; // 假设你有一个名为"深海1.html"的页面
+}
+
+function goToPage(pageName) {
+    window.location.href = pageName + ".html"; // 假设你有一个名为相应地图名.html的页面
+}
+
+function goBack() {
+    document.getElementById("singleplayerMenu").style.display = "none";
+    document.getElementById("multiplayerMenu").style.display = "none";
+    document.getElementById("mainMenu").style.display = "block";
+}
+        </script>
+    </body>
+</html>
