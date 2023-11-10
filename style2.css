@@ -1,0 +1,6 @@
+.box{
+    background-image: url('选择游戏模式.png'); /*背景图片*/
+    background-repeat: no-repeat; /*背景图片不重复*/
+    background-size:100% 100%; /*背景图片大小*/
+    background-attachment: fixed;
+    }    /* 类选择器   */
