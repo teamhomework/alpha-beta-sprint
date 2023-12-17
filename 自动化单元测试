@@ -1,0 +1,49 @@
+import unittest
+from game_module import Game, Player
+
+class TestGame(unittest.TestCase):
+    def setUp(self):
+        # 初始化游戏和玩家
+        self.game = Game()
+        self.player1 = Player("Player1", "dog")
+        self.player2 = Player("Player2", "cat")
+
+    def test_player_join(self):
+        # 测试新玩家加入游戏
+        self.game.add_player(self.player1)
+        self.assertIn(self.player1, self.game.players)
+
+    def test_player_run(self):
+        # 测试玩家跑酷动作
+        self.player1.run()
+        self.assertEqual(self.player1.speed, 10)  # 假设跑酷时速度设置为10
+
+    def test_game_start(self):
+        # 测试游戏开始
+        self.game.add_player(self.player1)
+        self.game.add_player(self.player2)
+        self.game.start()
+        self.assertTrue(self.game.is_running)
+
+    def test_game_score(self):
+        # 测试得分
+        self.player1.score = 5
+        self.game.add_player(self.player1)
+        self.game.add_player(self.player2)
+        self.game.update_score(self.player1, 10)
+        self.assertEqual(self.player1.score, 15)
+
+    def test_game_collision(self):
+        # 测试碰撞逻辑
+        self.player1.position = (100, 100)
+        self.player2.position = (100, 100)
+        self.assertTrue(self.game.check_collision(self.player1, self.player2))
+
+    def tearDown(self):
+        # 清理测试后的状态
+        self.game.end()
+        self.player1 = None
+        self.player2 = None
+
+if __name__ == '__main__':
+    unittest.main()
