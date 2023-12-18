@@ -29,7 +29,7 @@ export class GameManager extends Component {
     public playerCtrl: PlayerController | null = null;
     @property({ type: Label })
     public stepsLabel: Label | null = null;
-
+    private count: number = 0; 
     start() {
         this.setCurState(GameState.GS_INIT);
         this.playerCtrl?.node.on('JumpEnd', this.onPlayerJumpEnd, this);
@@ -50,18 +50,23 @@ export class GameManager extends Component {
         if(otherCollider.tag === 1)
         {
             // this.setCurState(GameState.GS_INIT);
-            this.start();
+            // this.start();
             // alert('onBeginContact');
         }
     }
     onEndContact (selfCollider: BoxCollider2D, otherCollider: BoxCollider2D) {
         // 只在两个碰撞体结束接触时被调用一次
-        if(otherCollider.tag === 1)
+        if(otherCollider.tag === 1 && selfCollider.tag === 1)
         {
-            
+            this.count=this.count+1;
+            if(this.count>20)
+            {
+                alert('您碰到障碍物多次，已经死亡，请重新来过！');
+                director.loadScene("scene-002");
+            }
             // this.Box.startMenu.active = true;
-            alert('你死了，请重新来过！');
-            director.loadScene("scene-002");
+            // alert('你已死亡，请重新来过！');
+            // director.loadScene("scene-002");
         }
     }
     init() {
@@ -132,7 +137,7 @@ export class GameManager extends Component {
             if (this._road[i - 1] === BlockType.BT_NONE) {
                 this._road.push(BlockType.BT_STONE);
             } else {
-                this._road.push(Math.floor(Math.random() * 20));
+                this._road.push(Math.floor(Math.random() * 50));
             }
         }
 

@@ -60,9 +60,9 @@ export class PlayerController extends Component {
     }
 
     onKeyDown(event: EventKeyboard) {
-        if (event.keyCode === KeyCode.ARROW_UP) {
+        if (event.keyCode === KeyCode.KEY_W) {
             this.jumpByStep(1);
-        } else if (event.keyCode === KeyCode.ARROW_RIGHT) {
+        } else if (event.keyCode === KeyCode.KEY_D) {
             this.startMoveRight();
         }
 
@@ -70,7 +70,7 @@ export class PlayerController extends Component {
     }
 
     onKeyUp(event: EventKeyboard) {
-        if (event.keyCode === KeyCode.ARROW_RIGHT) {
+        if (event.keyCode ===  KeyCode.KEY_D) {
             this.stopMoveRight();
             if (!this._isJumping) {
                 this.BodyAnim.play('idle');
@@ -172,9 +172,7 @@ export class PlayerController extends Component {
     }
 
     jumpByStep(step: number) {
-        if (this._isJumping) {
-            return;
-        }
+
         this._isJumping = true;
         this._startJump = true;
         this._jumpStep = 5;
