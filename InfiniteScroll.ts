@@ -95,48 +95,12 @@ updateGroundNodesPosition() {
         groundNode.position = new Vec3(i * this.groundWidth, 0, 0);
     }
 }
-    // private generateObstacle(dt: number) {
-    //     // 在一定条件下生成障碍物
-    //     if (Math.random() < 0.01) {
-    //         this.createObstacle();
-    //     }
-    // }
-
-    // private createObstacle() {
-    //     if (this.obstaclePrefab) {
-    //         // 从对象池中获取障碍物节点，如果对象池为空，则实例化新的节点
-    //         const obstacleNode = this.obstaclePool.length > 0 ? this.obstaclePool.pop()! : instantiate(this.obstaclePrefab);
-
-    //         // 设置障碍物的初始位置
-    //         // 替换之前的 cc.winSize.height
-    //         const screenHeight = cc.view.getVisibleSize().height;
-
-    //         // 重新计算 randomY
-    //         const randomY = Math.random() * screenHeight - screenHeight / 2;
-    //         obstacleNode.position = new Vec3(cc.winSize.width / 2, randomY, 0);
-
-    //         // 将障碍物节点添加到场景中
-    //         this.node.addChild(obstacleNode);
-
-    //         // 使用 tween 实现障碍物移动效果
-    //         tween(obstacleNode)
-    //             .to(10, { position: new Vec3(-cc.winSize.width / 2, randomY, 0) })
-    //             .call(() => {
-    //                 // 移动完成后回收障碍物节点到对象池
-    //                 this.obstaclePool.push(obstacleNode);
-    //                 // 从场景中移除障碍物节点
-    //                 obstacleNode.removeFromParent();
-    //             })
-    //             .start();
-    //     }
-    // }
-
     private initMap() {
         // 获取屏幕的宽度
         const screenWidth = 1920;
 
         // 计算每次生成地面的数量
-        const groundCount = Math.ceil(screenWidth / this.groundWidth)+1;
+        const groundCount = Math.ceil(screenWidth / this.groundWidth)+10;
 
         // 循环创建地面并添加到对象池
         for (let i = 0; i < groundCount; i++) {

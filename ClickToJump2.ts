@@ -1,7 +1,7 @@
 import { _decorator, Component, Node, director } from "cc";
 const { ccclass, property } = _decorator;
 
-@ccclass("ClickToJump")
+@ccclass("ClickToJump2")
 export class ClickToJump extends Component {
 
     start() {
@@ -10,6 +10,6 @@ export class ClickToJump extends Component {
 
     onButtonClick() {
         // 跳转到目标场景
-        director.loadScene('scene-001');
+        director.loadScene('scene-004');
     }
 }
